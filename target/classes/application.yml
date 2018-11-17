@@ -1,0 +1,13 @@
+server:
+  port: 80
+  servlet:
+    context-path:
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  profiles:
+    active: dev
+  jackson:
+    default-property-inclusion: non_null #@JsonInclude(JsonInclude.Include.NON_NULL)���ע���ȫ������
