@@ -1,17 +1,18 @@
 package com.xzf.backstage.dao;
 
 import com.xzf.backstage.dto.OrderDetailDTO;
-import com.xzf.backstage.entity.TOrderReq;
-import com.xzf.backstage.entity.TOrderReq11;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.awt.print.Pageable;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Created by SuperHappyPolaris
@@ -20,6 +21,7 @@ import java.util.Optional;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Slf4j
 public class TOrderReqDaoTest {
 
     @Autowired
@@ -34,5 +36,18 @@ public class TOrderReqDaoTest {
 //        List<t_order_req_11> orderDetailDTOS = tOrderReqDao.findAll();
         Object o = tOrderReqDao.findAll();
         Assert.assertNotNull(o);
+    }
+    @Test
+    public void findOne() {
+//        List<t_order_req_11> orderDetailDTOS = tOrderReqDao.findAll();
+        Object o = tOrderReqDao.findById("");
+        Assert.assertNotNull(o);
+    }
+    @Test
+    public void selectDetailTest(){
+        org.springframework.data.domain.Pageable pageable = new PageRequest(1,1);
+        Page<OrderDetailDTO> orderDetailDTOS = tOrderReqDao.selectDetail(pageable);
+//        List<OrderDetailDTO> orderDetailDTO = tOrderReqDao.selectDetail("t_order_req_11","ww");
+        Assert.assertNotNull(orderDetailDTOS);
     }
 }

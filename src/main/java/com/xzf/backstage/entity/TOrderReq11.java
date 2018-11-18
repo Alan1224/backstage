@@ -9,6 +9,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "t_order_req_11")
-public class TOrderReq11 extends TOrderReq {
+public class TOrderReq11 extends TOrderReqBase {
 
 }

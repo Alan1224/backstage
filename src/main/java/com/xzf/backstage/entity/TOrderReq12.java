@@ -9,6 +9,6 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "t_order_req_12")
-public class TOrderReq12 extends TOrderReq {
+public class TOrderReq12 extends TOrderReqBase {
 
 }

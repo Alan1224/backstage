@@ -1,6 +1,7 @@
 package com.xzf.backstage.entity.mapper;
 
 import com.xzf.backstage.dto.OrderCountDTO;
+import com.xzf.backstage.dto.OrderDetailDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
@@ -24,8 +25,13 @@ public class TOrderReqMapperTest {
     @Autowired
     private TOrderReqMapper tOrderReqMapper;
     @Test
-    public void select() {
-        List<OrderCountDTO> orderCountDTOS = tOrderReqMapper.selectCount("2018-11-01 13:50:09","2018-11-16 13:50:09","");
+    public void selectCountTest() {
+        List<OrderCountDTO> orderCountDTOS = tOrderReqMapper.selectCount("11","2018-11-01 13:50:09","2018-11-16 13:50:09","");
         Assert.assertNotNull(orderCountDTOS);
+    }
+    @Test
+    public void selectDetailTest(){
+        List<OrderDetailDTO> orderDetailDTOS = tOrderReqMapper.selectDetail("11","ww");
+        Assert.assertNotNull(orderDetailDTOS);
     }
 }

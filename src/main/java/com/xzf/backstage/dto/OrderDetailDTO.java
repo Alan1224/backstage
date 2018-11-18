@@ -17,7 +17,7 @@ import java.util.Date;
 public class OrderDetailDTO {
     private Date createTime;
     private String cpId;
-    private Integer fee;
+    private Double fee;
     private String spId;
     @Id
     private String ffId;
